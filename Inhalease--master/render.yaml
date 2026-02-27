@@ -1,0 +1,25 @@
+services:
+  # Deploy the Flask Application
+  - type: web
+    name: inhaleease-flask
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+    rootDir: "backend/flask-app"
+
+  # Deploy the Node Backend Application
+  - type: web
+    name: inhaleease-node-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+    rootDir: "backend"
+
+# Frontend is now deployed separately on Netlify
+# See frontend/netlify.toml for frontend deployment configuration

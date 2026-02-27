@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "ef38d817-6277-4dd0-8a99-c0c7d9ff5092",
+    "location": {
+      "city": "delhi"
+    },
+    "predictedAqi": 103,
+    "forecastDate": "2026-02-28T15:02:18.017Z",
+    "createdAt": "2026-02-27T15:02:18.022Z"
+  },
+  {
+    "_id": "fa95ce1e-ab96-4625-aacf-b34ed5a0c244",
+    "location": {
+      "city": "delhi"
+    },
+    "predictedAqi": 103,
+    "forecastDate": "2026-02-28T15:02:18.048Z",
+    "createdAt": "2026-02-27T15:02:18.050Z"
+  },
+  {
+    "_id": "691c4c34-c244-46b1-8a81-3643ddb2f928",
+    "location": {
+      "city": "delhi"
+    },
+    "predictedAqi": 103,
+    "forecastDate": "2026-02-28T15:02:35.907Z",
+    "createdAt": "2026-02-27T15:02:35.915Z"
+  },
+  {
+    "_id": "6a930315-3748-4d87-ad54-88a6b25ac442",
+    "location": {
+      "city": "delhi"
+    },
+    "predictedAqi": 103,
+    "forecastDate": "2026-02-28T15:02:35.948Z",
+    "createdAt": "2026-02-27T15:02:35.950Z"
+  }
+]

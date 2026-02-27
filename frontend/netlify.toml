@@ -1,0 +1,39 @@
+# Netlify Configuration for InhaleEase Frontend Deployment
+# This configuration deploys the frontend to Netlify and routes API calls to Render backend
+
+[build]
+  # Directory to build (frontend folder)
+  base = "frontend"
+  # No build command needed since it's static files
+  command = ""
+  # Publish directory
+  publish = "."
+
+# Redirect all routes to index.html for single-page app behavior
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables for the frontend
+[env.production]
+  REACT_APP_API_URL = "https://inhaleease-node-backend.onrender.com/api"
+
+[env.development]
+  REACT_APP_API_URL = "http://localhost:5000/api"
+
+# Cache settings
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
