@@ -15,12 +15,7 @@
   to = "/index.html"
   status = 200
 
-# Environment variables for the frontend
-[env.production]
-  REACT_APP_API_URL = "https://inhaleease-node-backend.onrender.com/api"
-
-[env.development]
-  REACT_APP_API_URL = "http://localhost:5000/api"
+# No env vars needed - API URL is set in frontend/js/config.js
 
 # Cache settings
 [[headers]]

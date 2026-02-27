@@ -9,5 +9,16 @@
       "city": "delhi"
     },
     "createdAt": "2026-02-27T15:02:17.082Z"
+  },
+  {
+    "_id": "a2fb8a1f-10ee-4718-b31b-11d6daa8cabe",
+    "firstName": "n",
+    "lastName": "n",
+    "email": "n@gmail.com",
+    "password": "$2a$10$dNthOYeTkjt0xxZqc/DOWeL8vnfESFY3R2phE/sfc8u3.3GVqdEC6",
+    "location": {
+      "city": "mumbai"
+    },
+    "createdAt": "2026-02-27T17:05:26.445Z"
   }
 ]

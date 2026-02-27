@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // Load env vars
 dotenv.config();
@@ -23,14 +22,6 @@ app.use(express.json());
 // Serve frontend assets from backend/public
 const frontendDir = path.join(__dirname, 'public');
 app.use(express.static(frontendDir));
-
-// Proxy Flask app (default: http://localhost:5005)
-const flaskTarget = process.env.FLASK_URL || 'http://localhost:5005';
-app.use('/flask', createProxyMiddleware({
-    target: flaskTarget,
-    changeOrigin: true,
-    pathRewrite: { '^/flask': '' },
-}));
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
