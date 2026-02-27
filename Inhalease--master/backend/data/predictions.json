@@ -124,5 +124,14 @@
     "predictedAqi": 100,
     "forecastDate": "2026-02-28T17:13:13.867Z",
     "createdAt": "2026-02-27T17:13:13.868Z"
+  },
+  {
+    "_id": "25115650-02d7-4e96-b0fc-eee7ae980cec",
+    "location": {
+      "city": "London"
+    },
+    "predictedAqi": 100,
+    "forecastDate": "2026-02-28T17:43:19.113Z",
+    "createdAt": "2026-02-27T17:43:19.114Z"
   }
 ]

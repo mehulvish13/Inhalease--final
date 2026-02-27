@@ -20,5 +20,12 @@
       "city": "mumbai"
     },
     "createdAt": "2026-02-27T17:05:26.445Z"
+  },
+  {
+    "_id": "ca6aeb9e-1a18-465e-b148-2d3b432e09b1",
+    "email": "test@inhalease.com",
+    "password": "$2a$10$d87A/XenWoJScJLoOQ7yO.onXUeMOpNyoV5Mw7FIl50SXb8RR1SRC",
+    "location": {},
+    "createdAt": "2026-02-27T17:43:07.653Z"
   }
 ]

@@ -1,40 +1,84 @@
-# InhaleEase (Smart Breathe)
+# InhaleEase
 
-A full-stack, AI-driven air quality monitoring and respiratory health prediction platform.
+An AI-driven air quality monitoring and respiratory health prediction platform.
 
-## Architecture Structure
+## Tech Stack
 
-This project follows a simple, robust full-stack architecture:
+- **Frontend:** HTML, CSS, Vanilla JavaScript (Netlify)
+- **Backend:** Node.js, Express.js (Render)
+- **Auth:** JWT + bcryptjs
+- **Storage:** File-backed JSON (no external database)
+- **AI/Predictions:** Pure JavaScript — no external ML libraries
 
-### `/frontend`
-Contains the static web application frontend.
-- **Technologies:** HTML, CSS, JavaScript
-- **Features:** Real-time dashboard, interactive Leaflet AI location selection, User authentication interfaces, and responsive aesthetics.
-- **Run:** Open `frontend/index.html` in your browser or serve via `frontend/start.bat` on `http://localhost:3001`
+## Project Structure
 
-### `/backend`
-Contains all server-side logic and database interactions.
-#### Node.js Server (`/backend`)
-Handles the primary REST API, user authentication, and data retrieval.
-- **Technologies:** Node.js, Express, file-backed JSON storage
-- **Features:** User sessions, JWT authentication, and routing.
-- **Run:** `npm start` or `npm run dev` (running on port `5000`)
+```
+Inhalease--master/
+├── backend/               # Node.js Express API (port 5000)
+│   ├── server.js
+│   ├── controllers/       # Route handlers
+│   ├── routes/            # API routes
+│   ├── utils/
+│   │   └── aiPredictionModel.js   # AI logic (pure JS)
+│   ├── middleware/        # JWT auth middleware
+│   ├── db/store.js        # File-backed JSON storage
+│   ├── data/              # JSON data files
+│   └── public/            # Served static files
+└── render.yaml            # Render deployment config
+```
 
-#### AI Prototype & Flask Service (`/backend/flask-app`)
-Contains the algorithmic prototypes for predicting air quality risk using Machine Learning.
-- **Technologies:** Python, Flask, Scikit-learn, Pandas
-- **Run:** `gunicorn app:app` or `python app.py`
+```
+frontend/                  # Static frontend (Netlify)
+├── index.html
+├── dashboard.html
+├── login.html
+├── signup.html
+├── css/style.css
+└── js/
+    ├── config.js          # API endpoint config (auto-detects local vs production)
+    └── main.js
+```
 
-## Getting Started Locally
+## API Endpoints
 
-1. **Prerequisites:** Have `Node.js` and `Python` installed.
-	- Backend data is stored in JSON files under `backend/data` for easy deployment.
-2. In the `frontend` folder, you can run `start.bat` on Windows to automatically spawn and serve both the Node backend and static frontend sequentially.
-3. Access the application simultaneously at `http://localhost:3001`.
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| POST | `/api/auth/signup` | No | Register user |
+| POST | `/api/auth/login` | No | Login user |
+| GET | `/api/users/profile` | Yes | Get user profile |
+| GET | `/api/aqi/live` | Yes | Current AQI + health recommendations |
+| GET | `/api/aqi/predict` | Yes | Tomorrow's AQI prediction |
+| GET | `/api/aqi/history` | Yes | User's AQI history |
+| GET | `/api/aqi/advanced` | Yes | Advanced health metrics + wearable data |
+
+## Running Locally
+
+```bash
+# Option 1: double-click start.bat (Windows)
+
+# Option 2: manual
+cd Inhalease--master/backend
+npm install
+# Create .env with JWT_SECRET=<your-secret>
+npm start
+# Open http://localhost:5000
+```
+
+Generate a JWT secret:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
 
 ## Deployment
-This project is configured out-of-the-box for [Render](https://render.com) using the `render.yaml` Blueprint file, which sequentially spins up the Node Backend, Flask Service, and Static Web server directly from the GitHub repository.
 
----
+**Backend → Render**
+- Root directory: `Inhalease--master/backend`
+- Build: `npm install`
+- Start: `npm start`
+- Environment variable: `JWT_SECRET=<your-secret>`
 
-*Designed for seamless deployment and AI-backed health analytics.*
+**Frontend → Netlify**
+- Base directory: `frontend`
+- No build command needed
+- Update `frontend/js/config.js` with your Render backend URL
+

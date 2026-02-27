@@ -10,7 +10,7 @@ services:
         value: production
       - key: JWT_SECRET
         value: ${JWT_SECRET}
-    rootDir: "backend"
+    rootDir: "Inhalease--master/backend"
 
 # Frontend is deployed separately on Netlify
 # See /frontend/netlify.toml for frontend deployment configuration

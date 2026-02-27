@@ -1,6 +1,6 @@
 /**
  * AI Prediction Logic for AQI Risk Assessment
- * Converts Flask AI logic to pure Node.js
+ * Pure Node.js implementation
  */
 
 // Simple ML model for air quality prediction

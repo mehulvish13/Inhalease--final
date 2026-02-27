@@ -908,5 +908,18 @@
     "pm25": 26,
     "pm10": 36,
     "recordedAt": "2026-02-27T17:13:13.853Z"
+  },
+  {
+    "_id": "716e5a2f-d78d-4726-80a5-f7d48a57f6ac",
+    "user": "ca6aeb9e-1a18-465e-b148-2d3b432e09b1",
+    "location": {
+      "city": "London",
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "aqi": 168,
+    "pm25": 50,
+    "pm10": 60,
+    "recordedAt": "2026-02-27T17:43:19.101Z"
   }
 ]
