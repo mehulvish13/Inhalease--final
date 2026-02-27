@@ -1,6 +1,6 @@
 // API Configuration
 // After deploying backend to Render, update RENDER_BACKEND_URL below with your actual URL
-const RENDER_BACKEND_URL = 'https://inhalease-backend.onrender.com';
+const RENDER_BACKEND_URL = 'https://inhalease-backend-3z8j.onrender.com';
 
 const config = {};
 
